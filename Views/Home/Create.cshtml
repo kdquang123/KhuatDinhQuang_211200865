@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/KhuatDinhQuang_Layout.cshtml";
+}
+@model HangHoa
+@await Component.InvokeAsync("KhuatDinhQuang_Header")
+<h2>
+    <div>Khuất Đình Quang</div>
+    <div>Thêm hàng hóa mới</div>
+</h2>
+<hr />
+<div>
+    <form asp-controller="Home" asp-action="Create" method="post">
+        <div class="form-group">
+            <label>Loại hàng</label><br />
+            <select asp-items="@ViewBag.LoaiHangID" asp-for="MaLoai"></select>
+        </div>
+        <div class="form-group">
+            <label>Tên hàng</label><br />
+            <input asp-for="TenHang" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Giá</label><br />
+            <input asp-for="Gia" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Ảnh</label><br />
+            <input asp-for="Anh" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
